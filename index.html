@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытие кейсов - Скины за деньги</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-list a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-list a:hover {
+            text-decoration: underline;
+        }
+
+        .balance {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .balance span {
+            font-size: 18px;
+        }
+
+        .balance button {
+            padding: 10px 20px;
+            background-color: #ff4b4b;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .balance button:hover {
+            background-color: #e63946;
+        }
+
+        .hero-section {
+            background: url('https://www.example.com/hero-background.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #00b894;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #009874;
+        }
+
+        .case-section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .case-section h2 {
+            margin-bottom: 40px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .cases {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .case {
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 22%;
+            margin: 10px 0;
+        }
+
+        .case img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .case h3 {
+            margin: 15px 0;
+            font-size: 24px;
+        }
+
+        .case p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .case button {
+            padding: 10px 20px;
+            background-color: #00b894;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .case button:hover {
+            background-color: #009874;
+        }
+
+        .footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">SkinCase</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#cases">Кейсы</a></li>
+                    <li><a href="inventory.html">Инвентарь</a></li>
+					<li><a href="roulette.html">Рулетка</a></li>
+					<li><a href="clicker.html">Кликер</a></li>
+                </ul>
+            </nav>
+            <div class="balance">
+                <span>Баланс: <span id="balance">1000</span>₽</span>
+                <form action="add-funds.html" target="_blank">
+				<button>Пополнить</button>
+                <button onclick="resetBalance()">Обнулить</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+	<font color = black>
+        <h1>Открывай кейсы и выбивай топовые скины!</h1>
+        <p>Выбирай интересные кейсы, открывай их и добавляй новые скины в свой инвентарь.</p>
+		</font>
+        <a href="#cases" class="cta-button">Посмотреть кейсы</a>
+    </section>
+
+    <section class="case-section" id="cases">
+        <div class="container">
+            <div class="cases">
+                <div class="case">
+                    <img src="https://pub-5f12f7508ff04ae5925853dee0438460.r2.dev/data/csgo/resource/flash/econ/weapon_cases/crate_community_33_png.png" alt="Кейс Киловатт">
+                    <h3>Кейс Киловатт</h3>
+                    <button onclick="openCase('kilowatt.html', 65)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 65₽</p>
+                </div>
+                <div class="case">
+                    <img src="https://pub-5f12f7508ff04ae5925853dee0438460.r2.dev/data/csgo/resource/flash/econ/weapon_cases/crate_community_32.png" alt="Кейс Революция">
+                    <h3>Кейс Революция</h3>
+                    <button onclick="openCase('revolution.html', 23)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 23₽</p>
+                </div>
+                <div class="case">
+                    <img src="https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFQwnfCcJmxDv9rhwIHZwqP3a-uGwz9Xv8F0j-qQrI3xiVLkrxVuZW-mJoWLMlhpWhFkc9M" alt="Кейс Грёзы и Кошмары">
+                    <h3>Кейс Грёзы</h3>
+                    <button onclick="openCase('dreams.html', 93)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 93₽</p>
+                </div>
+                <div class="case">
+                    <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFUynfWaI25G6Ijkl9iPw_SnNrjXw2oBu8cj3b2Qo4_33QbnrUdlYD37ddCLMlhpvs0XIz0" alt="Кейс Призма">
+                    <h3>Кейс Призма</h3>
+                    <button onclick="openCase('prisma.html', 44)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 44₽</p>
+                </div>
+				<div class="case">
+                    <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqPD1PrbQqW9e-NV9j_v-5YT0m1HglB81NDG3OoPDdwc4YViC-QW5lb_v1pC56pTOynprvHZ35n_YzEC3iEtEOOJqgaSACQLJ2iXmey0" alt="Ножевой Кейс">
+                    <h3>Кейс Бабочка</h3>
+                    <button onclick="openCase('butterfly.html', 5000)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 5000₽</p>
+                </div>
+				<div class="case">
+                    <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJh5C0g_bkNoTEhGlQ5vp9g-7J4cLx2wKw-hA6a2j7JoXEJgY6Z1uB_lPol-2-jcK17pyYnyRnsyEitHjegVXp1i87ARAZ" alt="Ножевой Кейс">
+                    <h3>Кейс Керамбит</h3>
+                    <button onclick="openCase('kerambit.html', 5000)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 5000₽</p>
+                </div>
+				<div class="case">
+                    <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmcjgOrzUhFRe-sR_jez--YXygED6_0o4ZjildoDBdVA_ZguC-gO9yeq90Je4vZuYwHdguSgm5H7am0TkhAYMMLKzxtQfiA" alt="Ножевой Кейс">
+                    <h3>Кейс Байонетт</h3>
+                    <button onclick="openCase('bayonett.html', 5000)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 5000₽</p>
+                </div>
+				<div class="case">
+                    <img src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfwOfBfThW-NOJh4-0h-LmI7fUqWdY781lteXA54vwxga1_EJkMTz2IIWRIwNoN1mC-AO_kOy7h5G97cjMmiFguiAh5SvaykOpwUYbOly5x_c" alt="Ножевой Кейс">
+                    <h3>Кейс Стилетто</h3>
+                    <button onclick="openCase('stiletto.html', 5000)">Открыть</button>
+					<p>
+					</p>
+					<p>Цена: 5000₽</p>
+                </div>
+				
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SkinCase. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function() {
+    const savedBalance = localStorage.getItem('balance');
+    
+    if (savedBalance !== null && !isNaN(savedBalance)) {
+        document.getElementById('balance').innerText = savedBalance;
+    } else {
+        localStorage.setItem('balance', 1000);
+        document.getElementById('balance').innerText = 1000;
+    }
+};
+
+function saveBalance(balance) {
+    localStorage.setItem('balance', balance);
+}
+
+function openCase(url, casePrice) {
+    const balanceElement = document.getElementById('balance');
+    let balance = parseInt(balanceElement.innerText);
+
+    if (isNaN(balance)) {
+        alert('Ошибка: Баланс не инициализирован.');
+        return;
+    }
+
+    if (balance >= casePrice) {
+        const newBalance = balance - casePrice;
+        balanceElement.innerText = newBalance;
+        saveBalance(newBalance);
+        window.location.href = url;
+    } else {
+        alert('Ты Нищий бомж, иди пополни баланс!');
+    }
+}
+
+function resetBalance() {
+    if (confirm('Вы уверены, что хотите обнулить баланс?')) {
+        const balanceElement = document.getElementById('balance');
+        balanceElement.innerText = '0';
+        saveBalance(0);
+    }
+}
+    </script>
+</body>
+</html>
